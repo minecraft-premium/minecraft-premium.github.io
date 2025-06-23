@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Minecraft Premium Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon.ico">
+  <style>
+    body {
+      background: url('https://wallpapercave.com/wp/wp7252400.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      color: white;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 12px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #00c300;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #00a000;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #result p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/logo.svg" class="logo">
+    <h1>🎁 Get a Free Minecraft Premium Account!</h1>
+    <p>Please fill in your real information to verify your eligibility 👇</p>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="email" id="email" placeholder="Email Address">
+    <input type="password" id="password" placeholder="Password">
+    <input type="tel" id="phone" placeholder="Phone Number">
+
+    <button onclick="getAcc()">Claim Account</button>
+
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script>
+    function getAcc() {
+      const name = document.getElementById("name").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const result = document.getElementById("result");
+
+      if (!name || !age || !email || !pass || !phone) {
+        alert("Please fill in all fields correctly!");
+        return;
+      }
+
+      const fakeAccounts = [
+        "SteveSlayer99 | Ender1234",
+        "DiamondGodX | pickaxePower",
+        "Herobrine69 | ghostmode2025",
+        "CreeperKing | boomboom123",
+        "RedstonePro | pistonMaster"
+      ];
+
+      const randomAccount = fakeAccounts[Math.floor(Math.random() * fakeAccounts.length)];
+
+      result.classList.remove("hidden");
+      result.innerHTML = `
+        <p>✅ Verified successfully!</p>
+        <p><strong>Your free account:</strong></p>
+        <p><strong>${randomAccount}</strong></p>
+        <p style="color: red;">⚠️ If login fails, try again in 24 hours or check your internet connection 😄</p>
+      `;
+    }
+  </script>
+</body>
+</html>
